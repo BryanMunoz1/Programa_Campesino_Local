@@ -1,45 +1,383 @@
-.hero-section {
-  position: relative;
-  background-image: url("/img/card1.jpg"); /* Ruta de tu imagen */
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+/* ===== ESTILOS GENERALES ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #faf8f3;
+    color: #333;
+    line-height: 1.6;
 }
 
-.hero-section .overlay {
-  position: absolute;
-  inset: 0;
-  backdrop-filter: blur(1px);
-  background-color: rgba(0, 0, 0, 0.6); /* oscurece un poco */
-  z-index: 1;
+/* Scroll suave para navegación */
+html {
+    scroll-behavior: smooth;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
+/* Color de selección personalizado */
+::selection {
+    background-color: #fd7e14;
+    color: white;
 }
 
-.content-box {
-  background-color: transparent; /* transparente total */
-  border: 2px solid rgba(255, 255, 255, 0.7); /* borde blanco con transparencia */
-  color: #fff; /* texto blanco puro */
-  max-width: 900px;
-  margin: 0 auto;
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
 }
 
-.benefits-img {
-  width: 70%;
-  height: auto;
-  border-radius: 10px;
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #198754 !important;
 }
 
-.carousel-item img {
-  width: 100%;
-  height: 400px; /* o el alto que necesites */
-  object-fit: cover; /* recorta sin deformar */
-  object-position: center;
+.navbar-brand:hover {
+    color: #fd7e14 !important;
+}
+
+.nav-link {
+    color: #198754 !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0 10px;
+    padding: 8px 16px !important;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white !important;
+    background-color: #fd7e14;
+}
+
+.nav-link.active {
+    color: #fd7e14 !important;
+    font-weight: 600;
+}
+
+/* ===== SECTION HERO ===== */
+.bg-success {
+    background-color: #198754 !important;
+}
+
+/* Añadimos un efecto simple al hero */
+#inicio {
+    background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+    position: relative;
+}
+
+/* Efecto decorativo simple */
+#inicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 80px 80px;
+}
+
+.display-3 {
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+.lead {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* ===== BOTONES ===== */
+.btn-warning {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: #0d5132 !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #fd7e14 !important;
+    border-color: #fd7e14 !important;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background-color: #20c997 !important;
+    border-color: #20c997 !important;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    transform: translateY(-2px);
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    border-color: white;
+    color: #198754 !important;
+}
+
+.btn-outline-success {
+    color: #20c997;
+    border-color: #20c997;
+}
+
+.btn-outline-success:hover {
+    background-color: #20c997;
+    border-color: #20c997;
+    color: white;
+}
+
+/* ===== SECCIÓN ESTADÍSTICAS ===== */
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* ===== CARDS ===== */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    color: #198754;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Color de fondo para iconos en cards de productos */
+.card-img-top.bg-success {
+    background-color: #20c997 !important;
+}
+
+/* ===== BADGES ===== */
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #0d5132 !important;
+}
+
+/* ===== TÍTULOS DE SECCIÓN ===== */
+.text-success {
+    color: #198754 !important;
+}
+
+.display-5, .display-6 {
+    font-weight: 700;
+}
+
+/* ===== ACCORDION ===== */
+.accordion-button {
+    background-color: #f8f9fa;
+    color: #198754;
+    font-weight: 600;
+    border: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #20c997;
+    color: white;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(32, 201, 151, 0.25);
+}
+
+/* ===== CAROUSEL ===== */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background-color: #fd7e14;
+    border-radius: 50%;
+    top: 50%;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev {
+    left: -25px;
+}
+
+.carousel-control-next {
+    right: -25px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ===== FORMULARIOS ===== */
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #25d366;
+    box-shadow: 0 0 0 0.25rem rgba(37, 211, 102, 0.25);
+}
+
+.form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.form-select:focus {
+    border-color: #25d366;
+    box-shadow: 0 0 0 0.25rem rgba(37, 211, 102, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #198754;
+}
+
+.form-check-input:checked {
+    background-color: #20c997;
+    border-color: #20c997;
+}
+
+/* ===== MODAL ===== */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+}
+
+.modal-header.bg-success {
+    background-color: #198754 !important;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+/* ===== FOOTER ===== */
+.bg-dark {
+    background-color: #0d5132 !important;
+}
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffc107 !important;
+}
+
+footer .text-warning {
+    color: #ffc107 !important;
+}
+
+/* ===== ÍCONOS ===== */
+.bi {
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para iconos sociales */
+footer .bi:hover {
+    transform: scale(1.2);
+}
+
+/* ===== BLOCKQUOTE ===== */
+.blockquote {
+    font-style: italic;
+    color: #666;
+}
+
+.blockquote-footer {
+    color: #888;
+}
+
+/* ===== ANIMACIONES ADICIONALES ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efecto para botones */
+.btn {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+    
+    .display-3 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-3 {
+        font-size: 1.8rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
 }
