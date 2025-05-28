@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="/css/styles.css">
+</head>
 <body>
     <!-- Navbar Responsive -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -49,32 +50,33 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="bg-success text-white" style="padding-top: 120px; min-height: 70vh;">
-        <div class="container">
-            <div class="row align-items-center">
+    <section id="inicio" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
-                    <h1 class="display-3 fw-bold mb-4">
+                    <h1 class="display-3 fw-bold mb-4 text-white">
                         Del Campo a tu Mesa
                         <span class="text-warning">Directo</span>
                     </h1>
-                    <p class="lead mb-4">
+                    <p class="lead mb-4 text-white">
                         Apoyamos a las familias campesinas de Cundinamarca conectándolas directamente contigo. 
                         Productos frescos, orgánicos y con el sabor auténtico de nuestras veredas.
                     </p>
                     <div class="d-flex gap-3 flex-wrap">
-                        <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#catalogoModal">
+                        <button type="button" class="btn btn-warning btn-lg hero-btn" data-bs-toggle="modal" data-bs-target="#catalogoModal">
                             <i class="bi bi-cart-fill me-2"></i>Ver Catálogo
                         </button>
-                        <a href="#productos" class="btn btn-outline-light btn-lg">
+                        <a href="#productos" class="btn btn-outline-light btn-lg hero-btn">
                             <i class="bi bi-arrow-down me-2"></i>Explorar
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <i class="bi bi-house-heart-fill display-1 text-warning"></i>
+                    <i class="bi bi-house-heart-fill display-1 text-warning hero-icon"></i>
                     <div class="mt-3">
-                        <i class="bi bi-geo-alt-fill me-2"></i>
-                        <span>Mosquera, Cundinamarca - Colombia</span>
+                        <i class="bi bi-geo-alt-fill me-2 text-white"></i>
+                        <span class="text-white">Mosquera, Cundinamarca - Colombia</span>
                     </div>
                 </div>
             </div>
@@ -135,10 +137,9 @@
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-img-top bg-success d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <i class="bi bi-apple text-white display-1"></i>
-                        </div>
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="/img/1.jpg" 
+                             class="card-img-top product-image" alt="Frutas Orgánicas">
                         <div class="card-body">
                             <h5 class="card-title text-success">Frutas Orgánicas</h5>
                             <p class="card-text">
@@ -155,10 +156,9 @@
                 
                 <!-- Card 2 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-img-top bg-success d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <i class="bi bi-egg-fried text-white display-1"></i>
-                        </div>
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="/img/2.jpg"
+                             class="card-img-top product-image" alt="Lácteos Artesanales">
                         <div class="card-body">
                             <h5 class="card-title text-success">Lácteos Artesanales</h5>
                             <p class="card-text">
@@ -175,10 +175,9 @@
                 
                 <!-- Card 3 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-img-top bg-success d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <i class="bi bi-flower2 text-white display-1"></i>
-                        </div>
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="/img/3.jpg" 
+                             class="card-img-top product-image" alt="Verduras de Casa">
                         <div class="card-body">
                             <h5 class="card-title text-success">Verduras de Casa</h5>
                             <p class="card-text">
@@ -195,10 +194,9 @@
                 
                 <!-- Card 4 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-img-top bg-success d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <i class="bi bi-cup-hot text-white display-1"></i>
-                        </div>
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="/img/4.webp" 
+                             class="card-img-top product-image" alt="Café de Altura">
                         <div class="card-body">
                             <h5 class="card-title text-success">Café de Altura</h5>
                             <p class="card-text">
@@ -215,10 +213,9 @@
                 
                 <!-- Card 5 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-img-top bg-success d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <i class="bi bi-droplet text-white display-1"></i>
-                        </div>
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="/img/5.webp"
+                             class="card-img-top product-image" alt="Miel Pura">
                         <div class="card-body">
                             <h5 class="card-title text-success">Miel Pura</h5>
                             <p class="card-text">
@@ -235,10 +232,9 @@
                 
                 <!-- Card 6 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-img-top bg-success d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <i class="bi bi-basket3 text-white display-1"></i>
-                        </div>
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="/img/6.webp" 
+                             class="card-img-top product-image" alt="Canastas Familiares">
                         <div class="card-body">
                             <h5 class="card-title text-success">Canastas Familiares</h5>
                             <p class="card-text">
@@ -651,12 +647,6 @@
                         <small>&copy; 2024 Centro de Biotecnología Agropecuaria - SENA. 
                         Proyecto de comercialización rural.</small>
                     </p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="d-flex justify-content-md-end align-items-center gap-3">
-                        <img src="https://via.placeholder.com/60x30/28a745/ffffff?text=SENA" alt="Logo SENA" class="img-fluid">
-                        <img src="https://via.placeholder.com/80x30/ffc107/000000?text=CBA" alt="Logo CBA" class="img-fluid">
-                    </div>
                 </div>
             </div>
         </div>
